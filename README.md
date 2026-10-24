@@ -11,6 +11,8 @@ Author: Andrea Gatti.
 
 ## TL;DR
 
+<img src="results/figures/fig3_forecast_year_intervals.png" width="760">
+
 **1. Forecasting** — four models, chosen on a validation year and scored **once** on an
 untouched test year (Oct 2024 → Sep 2025), with walk-forward backtesting and no look-ahead.
 
@@ -29,6 +31,8 @@ untouched test year (Oct 2024 → Sep 2025), with walk-forward backtesting and n
 - The ranking chosen on validation was *not* the one confirmed on test: data snooping showed
   up as ranking instability, not as worse errors.
 
+<img src="results/figures/fig1_forecast_error.png" width="520">
+
 **2. Spark spread & dispatch** — a hypothetical 1 MW CCGT (55% efficiency) decides every
 day at 12:00 which hours to run tomorrow, using each forecast, with start-up costs and a
 minimum run time (solved exactly with dynamic programming).
@@ -44,6 +48,8 @@ minimum run time (solved exactly with dynamic programming).
 - Between ML models the economic differences (≤ 1.4 k€) sit **below what one year of data
   can detect** (≈ 2.2 k€, Newey-West HAC test): a model that is significantly more accurate
   is not necessarily significantly more profitable.
+
+<img src="results/figures/fig2_dispatch_value.png" width="520">
 
 ---
 
@@ -102,7 +108,8 @@ pun-forecast/
 │   ├── 11_eua_ingestion.ipynb   EUA (CO2) auction prices
 │   └── 12_spark_spread.ipynb    clean spark spread + CCGT dispatch (dynamic programming)
 ├── src/forecasting.py           shared split, metrics, walk-forward, Diebold-Mariano
-├── results/                     metrics, tests and configs (CSV / JSON)
+├── src/make_post_figures.py      the summary figures
+├── results/                     metrics, tests, configs and figures
 └── data/                        raw + processed (not versioned)
 ```
 
