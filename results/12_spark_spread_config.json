@@ -1,0 +1,16 @@
+{
+  "plant": "hypothetical CCGT, normalised to 1 MW",
+  "gcv_over_lhv": 1.108,
+  "emission_factor_gas_lhv_t_per_mwh_th": 0.20196,
+  "efficiency_lhv": 0.55,
+  "efficiency_lhv_sensitivity": [
+    0.5,
+    0.55,
+    0.58
+  ],
+  "heat_rate_gcv": 2.0145454545454546,
+  "emission_factor_el_t_per_mwh_el": 0.36719999999999997,
+  "vom_eur_mwh": 3.0,
+  "start_cost_eur_per_mw": 50.0,
+  "min_run_hours": 4
+}

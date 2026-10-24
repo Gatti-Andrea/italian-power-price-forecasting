@@ -1,0 +1,66 @@
+{
+  "declared_on": "2026-09-18",
+  "candidates": {
+    "linear_v3_avg": "07 - daily refit, mean of expanding + rolling 365",
+    "xgb_single": "08 - refit every 30 d, expanding, 5 seeds",
+    "lear_v1_avg": "09 - refit every 30 d, mean of expanding + rolling 365",
+    "ensemble_avg": "declared 18/09 - equal-weighted mean of the three above"
+  },
+  "comparisons": [
+    [
+      "naive_epf",
+      "linear_v3_avg"
+    ],
+    [
+      "naive_epf",
+      "xgb_single"
+    ],
+    [
+      "naive_epf",
+      "lear_v1_avg"
+    ],
+    [
+      "naive_epf",
+      "ensemble_avg"
+    ],
+    [
+      "linear_v3_avg",
+      "xgb_single"
+    ],
+    [
+      "linear_v3_avg",
+      "lear_v1_avg"
+    ],
+    [
+      "xgb_single",
+      "lear_v1_avg"
+    ],
+    [
+      "lear_v1_avg",
+      "ensemble_avg"
+    ]
+  ],
+  "losses": [
+    "abs",
+    "squared"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "refit_handicap_eur_mwh": 0.1,
+  "test_period": [
+    "2024-10-01",
+    "2025-09-30"
+  ],
+  "findings": {
+    "lowest_mae": "ensemble_avg",
+    "ensemble_beats_best_single": false,
+    "xgb_beats_linear": false,
+    "lear_beats_xgb": true,
+    "rank_changed_from_validation": true
+  }
+}

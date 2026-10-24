@@ -1,0 +1,64 @@
+{
+  "plant_mw": 1,
+  "heat_rate_gcv": 2.0145454545454546,
+  "emission_factor_el": 0.36719999999999997,
+  "vom_eur_mwh": 3.0,
+  "start_cost_eur_per_mw": 50.0,
+  "min_run_hours": 4,
+  "decision": "12:00 D-1, forecast price - HR * gas D-1 - EF * EUA D-1",
+  "realization": "clean_spread: actual PUN, physical gas day, EUA of day D",
+  "state_carried_across_midnight": true,
+  "horizon": "myopic, one delivery day per decision",
+  "strategies": [
+    "perfect",
+    "perfect_price",
+    "naive_epf",
+    "linear",
+    "lear",
+    "xgb_seed0",
+    "xgb_seed1",
+    "xgb_seed2",
+    "xgb_seed3",
+    "xgb_seed4",
+    "ensemble_seed0",
+    "ensemble_seed1",
+    "ensemble_seed2",
+    "ensemble_seed3",
+    "ensemble_seed4"
+  ],
+  "tests": {
+    "type": "paired daily margin differences, Newey-West HAC, two-sided",
+    "lags": [
+      0,
+      5,
+      10
+    ],
+    "comparisons": [
+      [
+        "ensemble",
+        "lear"
+      ],
+      [
+        "ensemble",
+        "xgb"
+      ],
+      [
+        "lear",
+        "xgb"
+      ],
+      [
+        "xgb",
+        "linear"
+      ],
+      [
+        "lear",
+        "linear"
+      ],
+      [
+        "linear",
+        "naive_epf"
+      ]
+    ],
+    "note": "post-test analysis on the test year spent on 2026-09-18"
+  }
+}

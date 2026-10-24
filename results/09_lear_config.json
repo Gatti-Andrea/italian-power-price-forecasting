@@ -1,0 +1,28 @@
+{
+  "name": "lear_v1_avg",
+  "price_lags": [
+    1,
+    2,
+    3,
+    7
+  ],
+  "exo_lags": [
+    0,
+    1,
+    7
+  ],
+  "exogenous": [
+    "load_forecast_mw",
+    "residual_load_mw"
+  ],
+  "gas": false,
+  "n_features": 246,
+  "transform": "asinh((price - median) / MAD), window median and MAD",
+  "estimator": "LassoLarsIC(criterion='aic')",
+  "per_hour": true,
+  "refit_every_days": 30,
+  "averaged_windows": [
+    null,
+    365
+  ]
+}

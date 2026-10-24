@@ -1,0 +1,35 @@
+{
+  "name": "xgb_single",
+  "features": [
+    "naive_d1",
+    "naive_d7",
+    "residual_load_mw",
+    "gas_price_d1_eur_mwh",
+    "is_holiday",
+    "gas_x_residual_load",
+    "yesterday_holiday",
+    "day_of_week",
+    "local_hour"
+  ],
+  "per_hour": false,
+  "params": {
+    "objective": "reg:squarederror",
+    "learning_rate": 0.05,
+    "n_estimators": 200,
+    "min_child_weight": 20,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "tree_method": "hist",
+    "random_state": 0,
+    "max_depth": 6
+  },
+  "window_days": null,
+  "refit_every_days": 30,
+  "seeds_checked": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ]
+}
